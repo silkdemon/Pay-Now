@@ -18,6 +18,11 @@ More images - [Click Here](https://github.com/ShubSi26/Pay-Now/tree/main/images)
 # Local Setup
 
 - ## By using docker-compose
+  In Frontend folder, run
+  ```bash
+  npm run build
+  ```
+  Return to main folder
   ```bash
   docker-compose up --build
   ```

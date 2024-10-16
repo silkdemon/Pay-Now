@@ -10,7 +10,6 @@ services:
     environment:
       - secret=yoursecret
       - databaseurl=mongodb://mongo:27017/mydatabase
-      # - MONGODB_URI=mongodb://mongo:27017/mydatabase
     depends_on:
       - mongo
 
