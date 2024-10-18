@@ -1,3 +1,13 @@
+# Forked from [Pay-Now](https://github.com/ShubSi26/Pay-Now.git)
+This project is a fork of Pay-Now created by [@ShubSi26](https://github.com/ShubSi26) and updated by [@silkdemon](https://github.com/silkdemon).
+
+## My Contribution
+
+This fork includes automated tests written using Playwright. These tests are designed to verify the functionality of the application and ensure its reliability. My contribution focuses on enhancing the testing coverage with End-to-End (E2E) tests and improving the overall testing process.
+
+The tests are located in the `tests` folder and can be run using the following commands:
+
+
 # Pay Now
 
 ![](https://github.com/ShubSi26/Pay-Now/blob/main/images/default.jpg)
@@ -10,10 +20,10 @@ More images - [Click Here](https://github.com/ShubSi26/Pay-Now/tree/main/images)
 
 # Technology Used
 
-<img src="https://skillicons.dev/icons?i=mongodb,express,react,nodejs,tailwind,vite,ts,js,npm,docker " /> <img src = "https://jwt.io/img/pic_logo.svg" width = 50px> <img src = "https://zod.dev/logo.svg" width = 50px>
+<img src="https://skillicons.dev/icons?i=mongodb,express,react,nodejs,tailwind,vite,ts,js,npm,docker " /> <img src = "https://jwt.io/img/pic_logo.svg" width = 50px> <img src = "https://zod.dev/logo.svg" width = 50px> <img src="https://skillicons.dev/icons?i=playwright"/>
 
-| `mongodb` | `express` | `react` | `nodejs` | `tailwindcss` | `vite` | `typescript` | `javascript` | `Docker` | `JWT` | `ZOD` |
-| --------- | --------- | ------- | -------- | ------------- | ------ | ------------ | ------------ | -------- | ----- | ----- |
+| `mongodb` | `express` | `react` | `nodejs` | `tailwindcss` | `vite` | `typescript` | `javascript` | `Docker` | `JWT` | `ZOD` |`PLAYWRIGHT`|
+| --------- | --------- | ------- | -------- | ------------- | ------ | ------------ | ------------ | -------- | ----- | ----- | ----- |
 
 # Local Setup
 
