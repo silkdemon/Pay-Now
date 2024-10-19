@@ -1,0 +1,30 @@
+{
+  "name": "pay-now",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "This project is a fork of Pay-Now created by [@ShubSi26](https://github.com/ShubSi26) and updated by [@silkdemon](https://github.com/silkdemon).",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "husky"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@eslint/js": "^9.13.0",
+    "@playwright/test": "^1.48.1",
+    "@types/node": "^22.7.7",
+    "eslint": "^9.13.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.37.1",
+    "globals": "^15.11.0",
+    "husky": "^9.1.6",
+    "lint-staged": "^15.2.10",
+    "prettier": "^3.3.3",
+    "typescript-eslint": "^8.10.0"
+  },
+  "lint-staged": {
+    "**/*.{js,mjs,cjs,ts}": ["eslint --fix", "git add"]
+  }
+}
