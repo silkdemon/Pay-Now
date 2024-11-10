@@ -1,36 +1,69 @@
 version: "3.8"
 
 services:
-  backend:
-    build:
-      context: .
-      dockerfile: Dockerfile.back
-    ports:
-      - "3000:3000"
-    environment:
-      - secret=yoursecret
-      - databaseurl=mongodb://mongo:27017/mydatabase
-    depends_on:
-      - mongo
+  # backend:
+  #   build:
+  #     context: .
+  #     dockerfile: Dockerfile.back
+  #   ports:
+  #     - "3000:3000"
+  #   environment:
+  #     - secret=yoursecret
+  #     - databaseurl=mongodb://mongo:27017/mydatabase
+  #   depends_on:
+  #     - mongo
 
-  mongo:
-    image: mongo:latest
+  # mongo:
+  #   image: mongo:latest
+  #   ports:
+  #     - "27017:27017"
+  #   volumes:
+  #     - mongo-data:/data/db
+
+  # frontend:
+  #   build:
+  #     context: . # Assuming your frontend code is in a folder named 'frontend'
+  #     dockerfile: Dockerfile.front # You can also specify a different Dockerfile if needed
+  #   ports:
+  #     - "5173:5173"
+  #   environment:
+  #     - secret=yoursecret
+  #     - databaseurl=mongodb://mongo:27017/mydatabase
+  #   depends_on:
+  #     - backend
+  web:
+    image: "gitlab/gitlab-ce:latest"
+    # restart: always
+    container_name: gitlab-ce
+    hostname: localhost # Change this to your domain or IP
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://localhost'  # Change this to your domain or IP
+        gitlab_rails['gitlab_shell_ssh_port'] = 2222
     ports:
-      - "27017:27017"
+      - "8080:80"
+      - "8443:443"
     volumes:
-      - mongo-data:/data/db
+      - "./gitlab/config:/etc/gitlab"
+      - "./gitlab/logs:/var/log/gitlab"
+      - "./gitlab/data:/var/opt/gitlab"
+    networks:
+      - gitlab
 
-  frontend:
-    build:
-      context: . # Assuming your frontend code is in a folder named 'frontend'
-      dockerfile: Dockerfile.front # You can also specify a different Dockerfile if needed
-    ports:
-      - "5173:5173"
-    environment:
-      - secret=yoursecret
-      - databaseurl=mongodb://mongo:27017/mydatabase
+  gitlab-runner:
+    image: gitlab/gitlab-runner:latest
+    container_name: gitlab-runner
+    restart: always
     depends_on:
-      - backend
+      - web
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # Needed for Docker executor
+      - ./gitlab/runner:/etc/gitlab-runner
+    networks:
+      - gitlab
 
-volumes:
-  mongo-data:
+networks:
+  gitlab:
+    name: gitlab-network
+# volumes:
+#   mongo-data:
