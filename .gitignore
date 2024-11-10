@@ -3,4 +3,9 @@ backend/dist
 node_modules
 dist
 gitlabPasswd
-./gitlab.socket
+**/gitlab.socket
+**/gitaly
+gitlab/data/gitlab-workhorse/sockets/socket
+**/logs
+gitlab/data/postgresql
+**/redis.socket

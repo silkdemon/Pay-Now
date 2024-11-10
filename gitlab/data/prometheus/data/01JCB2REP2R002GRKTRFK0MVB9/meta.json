@@ -1,0 +1,17 @@
+{
+	"ulid": "01JCB2REP2R002GRKTRFK0MVB9",
+	"minTime": 1731232800000,
+	"maxTime": 1731240000000,
+	"stats": {
+		"numSamples": 18276546,
+		"numSeries": 40059,
+		"numChunks": 127394
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01JCB2REP2R002GRKTRFK0MVB9"
+		]
+	},
+	"version": 1
+}
