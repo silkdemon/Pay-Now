@@ -1,0 +1,17 @@
+{
+	"ulid": "01JCB9W7XNVS7VT54DX65T404N",
+	"minTime": 1731240000000,
+	"maxTime": 1731247200000,
+	"stats": {
+		"numSamples": 4832314,
+		"numSeries": 40290,
+		"numChunks": 64373
+	},
+	"compaction": {
+		"level": 1,
+		"sources": [
+			"01JCB9W7XNVS7VT54DX65T404N"
+		]
+	},
+	"version": 1
+}
